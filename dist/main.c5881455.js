@@ -131,17 +131,17 @@ var hashMap = xObject || [{
 }];
 
 var simplifyUrl = function simplifyUrl(url) {
-  return url.replace("https://", "").replace("http://", "").replace("www.", "").replace(/\/.*/, '');
+  return url.replace("https://", "").replace("http://", "").replace("www.", "").replace(/\/.*/, "");
 };
 
 var render = function render() {
   $siteList.find("li:not(.last)").remove();
   hashMap.forEach(function (node, index) {
     var $li = $("<li>\n        <div class=\"site\">\n          <div class=\"logo\">".concat(node.logo, "</div>\n          <div class=\"link\">").concat(simplifyUrl(node.url), "</div>\n          <div class=\"close\">\n            <svg class=\"icon\">\n              <use xlink:href=\"#icon-close\"></use>\n            </svg>\n          </div>\n      </div>\n    </li>")).insertBefore($lastLi);
-    $li.on('click', function () {
+    $li.on("click", function () {
       window.open(node.url);
     });
-    $li.on('click', '.close', function (e) {
+    $li.on("click", ".close", function (e) {
       e.stopPropagation(); //阻止冒泡
 
       hashMap.splice(index, 1);
@@ -170,14 +170,24 @@ window.onbeforeunload = function () {
   localStorage.setItem("x", string);
 };
 
-$(document).on('keypress', function (e) {
-  var key = e.key;
+function fn() {
+  $(document).on("keypress", function (e) {
+    console.log(e);
+    var key = e.key;
 
-  for (var i = 0; i < hashMap.length; i++) {
-    if (hashMap[i].logo.toLowerCase() === key) {
-      window.open(hashMap[i].url);
+    for (var i = 0; i < hashMap.length; i++) {
+      if (hashMap[i].logo.toLowerCase() === key) {
+        window.open(hashMap[i].url);
+      }
     }
-  }
-});
+  });
+}
+
+var el = document.querySelector(".input");
+el.addEventListener("keypress", function (e) {
+  console.log(e);
+  e.stopPropagation();
+  fn(e);
+}) || fn();
 },{}]},{},["epB2"], null)
-//# sourceMappingURL=main.48e2d121.js.map
+//# sourceMappingURL=main.c5881455.js.map
