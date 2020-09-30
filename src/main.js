@@ -10,10 +10,11 @@ const hashMap = xObject || [
   },
 ];
 const simplifyUrl = (url) => {
-  return url.replace("https://", "")
-  .replace("http://", "")
-  .replace("www.", "")
-  .replace(/\/.*/, '')
+  return url
+    .replace("https://", "")
+    .replace("http://", "")
+    .replace("www.", "")
+    .replace(/\/.*/, "");
 };
 const render = () => {
   $siteList.find("li:not(.last)").remove();
@@ -29,14 +30,14 @@ const render = () => {
           </div>
       </div>
     </li>`).insertBefore($lastLi);
-    $li.on('click', ()=>{
-        window.open(node.url)
+    $li.on("click", () => {
+      window.open(node.url);
     });
-    $li.on('click', '.close', (e)=>{
-        e.stopPropagation() //阻止冒泡
-        hashMap.splice(index, 1)
-        render()
-    })
+    $li.on("click", ".close", (e) => {
+      e.stopPropagation(); //阻止冒泡
+      hashMap.splice(index, 1);
+      render();
+    });
   });
 };
 
@@ -59,11 +60,22 @@ window.onbeforeunload = () => {
   localStorage.setItem("x", string);
 };
 
-$(document).on('keypress', (e)=>{
-  const {key} = e;
-  for(let i = 0; i < hashMap.length; i++){
-    if(hashMap[i].logo.toLowerCase() === key){
-      window.open(hashMap[i].url)
+function fn() {
+  $(document).on("keypress", (e) => {
+    console.log(e);
+    const { key } = e;
+    for (let i = 0; i < hashMap.length; i++) {
+      if (hashMap[i].logo.toLowerCase() === key) {
+        window.open(hashMap[i].url);
+      }
     }
-  }
-})
+  });
+}
+
+let el = document.querySelector(".input");
+
+el.addEventListener("keypress", (e) => {
+  console.log(e);
+  e.stopPropagation();
+  fn(e);
+}) || fn();
