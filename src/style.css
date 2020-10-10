@@ -37,13 +37,23 @@ body {
 
 .globalHeader {
   margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
 
 @media(min-width: 500px) {
   .globalHeader {
     margin: 60px 0 100px;
   }
 }
+
+.logo {
+  margin-bottom: 40px;
+}
+
 
 .searchForm {
   display: flex;
@@ -59,12 +69,20 @@ body {
 }
 
 .searchForm>input {
+  outline: none;
   width: 100%;
   margin-right: 10px;
   height: 40px;
   padding: 0 10px;
   border: 1px solid #ddd;
+  border-radius: 25px;
+  transition: all .5s;
+}
+
+input:focus {
   border-radius: 4px;
+  border: 1px solid orange;
+  transition: all .5s;
 }
 
 .searchForm>button {
@@ -123,9 +141,9 @@ body {
   cursor: pointer;
 }
 
-.siteList .site>.logo {
-  width: 64px;
-  height: 64px;
+.favicon {
+  width: 24px;
+  height: 24px;
   display: flex;
   justify-content: center;
   align-items: center;

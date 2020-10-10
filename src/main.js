@@ -3,9 +3,12 @@ const $lastLi = $siteList.find("li.last");
 const x = localStorage.getItem("x");
 const xObject = JSON.parse(x);
 const hashMap = xObject || [
-  { logo: "D", url: "https://developer.mozilla.org" },
   {
-    logo: "G",
+    logo: "https://favicon.link/https://developer.mozilla.org",
+    url: "https://developer.mozilla.org",
+  },
+  {
+    logo: "https://favicon.link/https://github.com",
     url: "https://github.com",
   },
 ];
@@ -21,7 +24,7 @@ const render = () => {
   hashMap.forEach((node, index) => {
     const $li = $(`<li>
         <div class="site">
-          <div class="logo">${node.logo}</div>
+          <img src="${node.logo}" class="favicon">
           <div class="link">${simplifyUrl(node.url)}</div>
           <div class="close">
             <svg class="icon">
@@ -49,7 +52,7 @@ $(".addButton").on("click", () => {
     url = "https://" + url;
   }
   hashMap.push({
-    logo: simplifyUrl(url)[0].toUpperCase(),
+    logo: "https://favicon.link/" + url,
     url: url,
   });
 
@@ -72,10 +75,10 @@ function fn() {
   });
 }
 
-let el = document.querySelector(".input");
+// let el = document.querySelector(".input");
 
-el.addEventListener("keypress", (e) => {
-  console.log(e);
-  e.stopPropagation();
-  fn(e);
-}) || fn();
+// el.addEventListener("keypress", (e) => {
+//   console.log(e);
+//   e.stopPropagation();
+//   fn(e);
+// }) || fn();
