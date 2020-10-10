@@ -4,11 +4,11 @@ const x = localStorage.getItem("x");
 const xObject = JSON.parse(x);
 const hashMap = xObject || [
   {
-    logo: "https://favicon.link/https://developer.mozilla.org",
+    logo: "https://favicon.link/v1/ico.php?url=https://developer.mozilla.org",
     url: "https://developer.mozilla.org",
   },
   {
-    logo: "https://favicon.link/https://github.com",
+    logo: "https://favicon.link/v1/ico.php?url=https://github.com",
     url: "https://github.com",
   },
 ];
@@ -52,7 +52,7 @@ $(".addButton").on("click", () => {
     url = "https://" + url;
   }
   hashMap.push({
-    logo: "https://favicon.link/" + url,
+    logo: "https://favicon.link/v1/ico.php?url=" + url,
     url: url,
   });
 
