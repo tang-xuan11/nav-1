@@ -123,21 +123,26 @@ var $lastLi = $siteList.find("li.last");
 var x = localStorage.getItem("x");
 var xObject = JSON.parse(x);
 var hashMap = xObject || [{
-  logo: "D",
-  url: "https://developer.mozilla.org"
+  logo: "https://favicon.link/v1/ico.php?url=https://www.bilibili.com/",
+  url: "https://www.bilibili.com/"
 }, {
-  logo: "G",
+  logo: "https://favicon.link/v1/ico.php?url=https://github.com",
   url: "https://github.com"
+}, {
+  logo: "https://favicon.link/v1/ico.php?url=https://www.zhihu.com/",
+  url: "https://www.zhihu.com/"
 }];
 
 var simplifyUrl = function simplifyUrl(url) {
-  return url.replace("https://", "").replace("http://", "").replace("www.", "").replace(/\/.*/, "");
+  if (url) {
+    return url.replace("https://", "").replace("http://", "").replace("www.", "").replace(/\/.*/, "");
+  }
 };
 
 var render = function render() {
   $siteList.find("li:not(.last)").remove();
   hashMap.forEach(function (node, index) {
-    var $li = $("<li>\n        <div class=\"site\">\n          <div class=\"logo\">".concat(node.logo, "</div>\n          <div class=\"link\">").concat(simplifyUrl(node.url), "</div>\n          <div class=\"close\">\n            <svg class=\"icon\">\n              <use xlink:href=\"#icon-close\"></use>\n            </svg>\n          </div>\n      </div>\n    </li>")).insertBefore($lastLi);
+    var $li = $("<li>\n        <div class=\"site\">\n        <div class=\"tile-icon\">\n          <img src=\"".concat(node.logo, "\" class=\"favicon\">\n        </div>\n          <p class=\"link\">").concat(simplifyUrl(node.url), "</p>\n          <div class=\"close\">\n            <svg class=\"icon\">\n              <use xlink:href=\"#icon-close\"></use>\n            </svg>\n          </div>\n        </div>\n    </li>")).insertBefore($lastLi);
     $li.on("click", function () {
       window.open(node.url);
     });
@@ -154,12 +159,16 @@ render();
 $(".addButton").on("click", function () {
   var url = window.prompt("请输入新增网站的网址");
 
+  if (url === null) {
+    return;
+  }
+
   if (url.indexOf("http") !== 0) {
     url = "https://" + url;
   }
 
   hashMap.push({
-    logo: simplifyUrl(url)[0].toUpperCase(),
+    logo: "https://favicon.link/v1/ico.php?url=" + url,
     url: url
   });
   render();
@@ -182,12 +191,5 @@ function fn() {
     }
   });
 }
-
-var el = document.querySelector(".input");
-el.addEventListener("keypress", function (e) {
-  console.log(e);
-  e.stopPropagation();
-  fn(e);
-}) || fn();
 },{}]},{},["epB2"], null)
-//# sourceMappingURL=main.c5881455.js.map
+//# sourceMappingURL=main.ec99cb42.js.map
