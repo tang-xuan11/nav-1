@@ -4,34 +4,42 @@ const x = localStorage.getItem("x");
 const xObject = JSON.parse(x);
 const hashMap = xObject || [
   {
-    logo: "https://favicon.link/v1/ico.php?url=https://developer.mozilla.org",
-    url: "https://developer.mozilla.org",
+    logo: "https://favicon.link/v1/ico.php?url=https://www.bilibili.com/",
+    url: "https://www.bilibili.com/",
   },
   {
     logo: "https://favicon.link/v1/ico.php?url=https://github.com",
     url: "https://github.com",
   },
+  {
+    logo: "https://favicon.link/v1/ico.php?url=https://www.zhihu.com/",
+    url: "https://www.zhihu.com/",
+  },
 ];
 const simplifyUrl = (url) => {
-  return url
-    .replace("https://", "")
-    .replace("http://", "")
-    .replace("www.", "")
-    .replace(/\/.*/, "");
+  if (url) {
+    return url
+      .replace("https://", "")
+      .replace("http://", "")
+      .replace("www.", "")
+      .replace(/\/.*/, "");
+  }
 };
 const render = () => {
   $siteList.find("li:not(.last)").remove();
   hashMap.forEach((node, index) => {
     const $li = $(`<li>
         <div class="site">
+        <div class="tile-icon">
           <img src="${node.logo}" class="favicon">
-          <div class="link">${simplifyUrl(node.url)}</div>
+        </div>
+          <p class="link">${simplifyUrl(node.url)}</p>
           <div class="close">
             <svg class="icon">
               <use xlink:href="#icon-close"></use>
             </svg>
           </div>
-      </div>
+        </div>
     </li>`).insertBefore($lastLi);
     $li.on("click", () => {
       window.open(node.url);
@@ -48,6 +56,9 @@ render();
 
 $(".addButton").on("click", () => {
   let url = window.prompt("请输入新增网站的网址");
+  if (url === null) {
+    return;
+  }
   if (url.indexOf("http") !== 0) {
     url = "https://" + url;
   }
@@ -74,11 +85,3 @@ function fn() {
     }
   });
 }
-
-// let el = document.querySelector(".input");
-
-// el.addEventListener("keypress", (e) => {
-//   console.log(e);
-//   e.stopPropagation();
-//   fn(e);
-// }) || fn();
