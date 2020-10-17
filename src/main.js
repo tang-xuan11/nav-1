@@ -15,6 +15,14 @@ const hashMap = xObject || [
     logo: "https://favicon.link/v1/ico.php?url=https://www.zhihu.com/",
     url: "https://www.zhihu.com/",
   },
+  {
+    logo: "https://favicon.link/v1/ico.php?url=https://www.jd.com/",
+    url: "https://www.jd.com/",
+  },
+  {
+    logo: "https://favicon.link/v1/ico.php?url=https://www.taobao.com/",
+    url: "https://www.taobao.com/",
+  },
 ];
 const simplifyUrl = (url) => {
   if (url) {
