@@ -90,7 +90,7 @@ img {
 
 @media(min-width: 500px) {
   .searchForm {
-    max-width: 400px;
+    max-width: 850px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -109,13 +109,20 @@ img {
 .searchForm>input {
   outline: none;
   width: 100%;
-  margin-right: 10px;
-  height: 40px;
-  padding-inline-start: 40px;
+  height: 60px;
+  padding-inline-start: 50px;
   border: 1px solid #ddd;
   border-radius: 25px;
   transition: all .5s;
+  font-size: 18px;
   position: relative;
+}
+
+@media(max-width: 500px) {
+  .searchForm>input{
+    height: 40px;
+    font-size: 16px;
+  }
 }
 
 .searchForm>.icon-wrapper {
@@ -125,7 +132,7 @@ img {
 }
 
 .searchForm>.icon-wrapper>.icon {
-  font-size: 20px;
+  font-size: 30px;
 }
 
 input:focus {
