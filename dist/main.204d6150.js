@@ -138,7 +138,7 @@ var hashMap = xObject || [{
   logo: "https://favicon.link/www.bilibili.com/",
   url: "https://www.bilibili.com/"
 }, {
-  logo: "https://favicon.link/github.com",
+  logo: "https://favicon.link/www.github.com",
   url: "https://github.com"
 }, {
   logo: "https://favicon.link/www.zhihu.com/",
@@ -220,4 +220,4 @@ if (cookie_skin !== null) {
   $wrapper.removeClass().addClass(cookie_skin);
 }
 },{}]},{},["epB2"], null)
-//# sourceMappingURL=main.18550e0a.js.map
+//# sourceMappingURL=main.204d6150.js.map

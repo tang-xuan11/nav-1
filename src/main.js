@@ -38,7 +38,7 @@ const hashMap = xObject || [
     url: "https://www.bilibili.com/",
   },
   {
-    logo: "https://favicon.link/github.com",
+    logo: "https://favicon.link/www.github.com",
     url: "https://github.com",
   },
   {
