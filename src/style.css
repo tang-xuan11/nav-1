@@ -32,20 +32,15 @@ img {
 
 
 
-.wrapper {
-  background: url(./images/WebsiteBackground.jpg);
-  background-color: #fff;
-  background-repeat: no-repeat;
+/* .wrapper {
+  background-image: url(./images/WebsiteBackground.jpg);
   background-size: cover;
-  -webkit-background-size: cover;
-  -o-background-size: cover;
   background-position: center 0;
   height: 100vh;
-}
+} */
 
-@media(min-width: 500px) {
+/* @media(min-width: 500px) {
   .wrapper {
-    background: url(./images/WebsiteBackground.jpg);
     position: fixed;
     top: 0;
     left: 0;
@@ -54,14 +49,13 @@ img {
     min-width: 1000px;
     z-index: -10;
     zoom: 1;
-    background-color: #fff;
     background-repeat: no-repeat;
     background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
     background-position: center 0;
   }
-}
+} */
 
 .globalHeader {
   padding: 20px;
@@ -80,6 +74,7 @@ img {
 
 .logo {
   margin-bottom: 40px;
+  cursor: pointer;
 }
 
 
@@ -116,10 +111,12 @@ img {
   transition: all .5s;
   font-size: 18px;
   position: relative;
+  background: rgba(255, 255, 255, .2);
+  box-shadow: rgba(0, 0, 0, .2) 0 0 10px;
 }
 
 @media(max-width: 500px) {
-  .searchForm>input{
+  .searchForm>input {
     height: 40px;
     font-size: 16px;
   }
@@ -138,6 +135,7 @@ img {
 input:focus {
   border-radius: 4px;
   border: 1px solid orange;
+  background: white;
   transition: all .5s;
 }
 

@@ -2,6 +2,37 @@ const $siteList = $(".siteList");
 const $lastLi = $siteList.find("li.last");
 const x = localStorage.getItem("x");
 const xObject = JSON.parse(x);
+const $logo = $(".logo");
+const $wrapper = $(".wrapper");
+const imgArr = [
+  "wrapper",
+  "wrapper1",
+  "wrapper2",
+  "wrapper3",
+  "wrapper4",
+  "wrapper5",
+  "wrapper6",
+  "wrapper7",
+  "wrapper8",
+  "wrapper9",
+  "wrapper10",
+  "wrapper11",
+  "wrapper12",
+  "wrapper13",
+  "wrapper14",
+  "wrapper15",
+  "wrapper16",
+  "wrapper17",
+  "wrapper18",
+];
+$logo.click(function () {
+  const imgIndex = parseInt(Math.random() * (imgArr.length - 1));
+  console.log(imgIndex);
+  const currentImg = imgArr[imgIndex];
+  $wrapper.removeClass().addClass(currentImg);
+  $.cookie("wrapper_class", currentImg, { path: "/", expires: 10 });
+});
+
 const hashMap = xObject || [
   {
     logo: "https://favicon.link/v1/ico.php?url=https://www.bilibili.com/",
@@ -92,4 +123,9 @@ function fn() {
       }
     }
   });
+}
+let cookie_skin = $.cookie("wrapper_class");
+console.log(cookie_skin);
+if (cookie_skin !== null) {
+  $wrapper.removeClass().addClass(cookie_skin);
 }
