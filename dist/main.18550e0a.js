@@ -135,19 +135,19 @@ $logo.click(function () {
   });
 });
 var hashMap = xObject || [{
-  logo: "https://favicon.link/v1/ico.php?url=https://www.bilibili.com/",
+  logo: "https://favicon.link/www.bilibili.com/",
   url: "https://www.bilibili.com/"
 }, {
-  logo: "https://favicon.link/v1/ico.php?url=https://github.com",
+  logo: "https://favicon.link/github.com",
   url: "https://github.com"
 }, {
-  logo: "https://favicon.link/v1/ico.php?url=https://www.zhihu.com/",
+  logo: "https://favicon.link/www.zhihu.com/",
   url: "https://www.zhihu.com/"
 }, {
-  logo: "https://favicon.link/v1/ico.php?url=https://www.jd.com/",
+  logo: "https://favicon.link/www.jd.com/",
   url: "https://www.jd.com/"
 }, {
-  logo: "https://favicon.link/v1/ico.php?url=https://www.taobao.com/",
+  logo: "https://favicon.link/www.taobao.com/",
   url: "https://www.taobao.com/"
 }];
 
@@ -181,12 +181,16 @@ $(".addButton").on("click", function () {
     return;
   }
 
+  if (url === "") {
+    return alert("网址不能为空");
+  }
+
   if (url.indexOf("http") !== 0) {
     url = "https://" + url;
   }
 
   hashMap.push({
-    logo: "https://favicon.link/v1/ico.php?url=" + url,
+    logo: "https://favicon.link/" + url,
     url: url
   });
   render();
@@ -216,4 +220,4 @@ if (cookie_skin !== null) {
   $wrapper.removeClass().addClass(cookie_skin);
 }
 },{}]},{},["epB2"], null)
-//# sourceMappingURL=main.6b6a3f6b.js.map
+//# sourceMappingURL=main.18550e0a.js.map

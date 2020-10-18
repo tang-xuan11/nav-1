@@ -34,23 +34,23 @@ $logo.click(function () {
 
 const hashMap = xObject || [
   {
-    logo: "https://favicon.link/v1/ico.php?url=https://www.bilibili.com/",
+    logo: "https://favicon.link/www.bilibili.com/",
     url: "https://www.bilibili.com/",
   },
   {
-    logo: "https://favicon.link/v1/ico.php?url=https://github.com",
+    logo: "https://favicon.link/github.com",
     url: "https://github.com",
   },
   {
-    logo: "https://favicon.link/v1/ico.php?url=https://www.zhihu.com/",
+    logo: "https://favicon.link/www.zhihu.com/",
     url: "https://www.zhihu.com/",
   },
   {
-    logo: "https://favicon.link/v1/ico.php?url=https://www.jd.com/",
+    logo: "https://favicon.link/www.jd.com/",
     url: "https://www.jd.com/",
   },
   {
-    logo: "https://favicon.link/v1/ico.php?url=https://www.taobao.com/",
+    logo: "https://favicon.link/www.taobao.com/",
     url: "https://www.taobao.com/",
   },
 ];
@@ -97,11 +97,14 @@ $(".addButton").on("click", () => {
   if (url === null) {
     return;
   }
+  if (url === "") {
+    return alert("网址不能为空");
+  }
   if (url.indexOf("http") !== 0) {
     url = "https://" + url;
   }
   hashMap.push({
-    logo: "https://favicon.link/v1/ico.php?url=" + url,
+    logo: "https://favicon.link/" + url,
     url: url,
   });
 
