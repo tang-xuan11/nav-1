@@ -27,7 +27,6 @@ const imgArr = [
 ];
 $logo.click(function () {
   const imgIndex = parseInt(Math.random() * (imgArr.length - 1));
-  console.log(imgIndex);
   const currentImg = imgArr[imgIndex];
   $wrapper.removeClass().addClass(currentImg);
   $.cookie("wrapper_class", currentImg, { path: "/", expires: 10 });
@@ -125,7 +124,6 @@ function fn() {
   });
 }
 let cookie_skin = $.cookie("wrapper_class");
-console.log(cookie_skin);
 if (cookie_skin !== null) {
   $wrapper.removeClass().addClass(cookie_skin);
 }

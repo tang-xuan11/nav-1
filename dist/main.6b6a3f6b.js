@@ -127,7 +127,6 @@ var $wrapper = $(".wrapper");
 var imgArr = ["wrapper", "wrapper1", "wrapper2", "wrapper3", "wrapper4", "wrapper5", "wrapper6", "wrapper7", "wrapper8", "wrapper9", "wrapper10", "wrapper11", "wrapper12", "wrapper13", "wrapper14", "wrapper15", "wrapper16", "wrapper17", "wrapper18"];
 $logo.click(function () {
   var imgIndex = parseInt(Math.random() * (imgArr.length - 1));
-  console.log(imgIndex);
   var currentImg = imgArr[imgIndex];
   $wrapper.removeClass().addClass(currentImg);
   $.cookie("wrapper_class", currentImg, {
@@ -212,10 +211,9 @@ function fn() {
 }
 
 var cookie_skin = $.cookie("wrapper_class");
-console.log(cookie_skin);
 
 if (cookie_skin !== null) {
   $wrapper.removeClass().addClass(cookie_skin);
 }
 },{}]},{},["epB2"], null)
-//# sourceMappingURL=main.13912e6a.js.map
+//# sourceMappingURL=main.6b6a3f6b.js.map
