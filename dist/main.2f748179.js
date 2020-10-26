@@ -124,16 +124,13 @@ var x = localStorage.getItem("x");
 var xObject = JSON.parse(x);
 var $logo = $(".logo");
 var $wrapper = $(".wrapper");
-var imgArr = ["wrapper", "wrapper1", "wrapper2", "wrapper3", "wrapper4", "wrapper5", "wrapper6", "wrapper7", "wrapper8", "wrapper9", "wrapper10", "wrapper11", "wrapper12", "wrapper13", "wrapper14", "wrapper15", "wrapper16", "wrapper17", "wrapper18"];
-$logo.click(function () {
-  var imgIndex = parseInt(Math.random() * (imgArr.length - 1));
-  var currentImg = imgArr[imgIndex];
-  $wrapper.removeClass().addClass(currentImg);
-  $.cookie("wrapper_class", currentImg, {
-    path: "/",
-    expires: 10
-  });
-});
+var imgArr = ["wrapper", "wrapper1", "wrapper2", "wrapper3", "wrapper4", "wrapper5", "wrapper6", "wrapper7", "wrapper8", "wrapper9", "wrapper10", "wrapper11", "wrapper12", "wrapper13", "wrapper14", "wrapper15", "wrapper16", "wrapper17", "wrapper18"]; // $logo.click(function () {
+//   const imgIndex = parseInt(Math.random() * (imgArr.length - 1));
+//   const currentImg = imgArr[imgIndex];
+//   $wrapper.removeClass().addClass(currentImg);
+//   $.cookie("wrapper_class", currentImg, { path: "/", expires: 10 });
+// });
+
 var hashMap = xObject || [{
   logo: "https://favicon.link/www.bilibili.com/",
   url: "https://www.bilibili.com/"
@@ -212,12 +209,9 @@ function fn() {
       }
     }
   });
-}
-
-var cookie_skin = $.cookie("wrapper_class");
-
-if (cookie_skin !== null) {
-  $wrapper.removeClass().addClass(cookie_skin);
-}
+} // let cookie_skin = $.cookie("wrapper_class");
+// if (cookie_skin !== null) {
+//   $wrapper.removeClass().addClass(cookie_skin);
+// }
 },{}]},{},["epB2"], null)
-//# sourceMappingURL=main.204d6150.js.map
+//# sourceMappingURL=main.2f748179.js.map

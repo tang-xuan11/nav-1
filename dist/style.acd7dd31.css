@@ -74,7 +74,7 @@ img {
 
 .logo {
   margin-bottom: 40px;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 
@@ -296,4 +296,4 @@ input:focus {
   height: 24px;
 }
 
-/*# sourceMappingURL=style.2a29765b.css.map */
+/*# sourceMappingURL=style.acd7dd31.css.map */

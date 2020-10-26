@@ -25,12 +25,12 @@ const imgArr = [
   "wrapper17",
   "wrapper18",
 ];
-$logo.click(function () {
-  const imgIndex = parseInt(Math.random() * (imgArr.length - 1));
-  const currentImg = imgArr[imgIndex];
-  $wrapper.removeClass().addClass(currentImg);
-  $.cookie("wrapper_class", currentImg, { path: "/", expires: 10 });
-});
+// $logo.click(function () {
+//   const imgIndex = parseInt(Math.random() * (imgArr.length - 1));
+//   const currentImg = imgArr[imgIndex];
+//   $wrapper.removeClass().addClass(currentImg);
+//   $.cookie("wrapper_class", currentImg, { path: "/", expires: 10 });
+// });
 
 const hashMap = xObject || [
   {
@@ -126,7 +126,7 @@ function fn() {
     }
   });
 }
-let cookie_skin = $.cookie("wrapper_class");
-if (cookie_skin !== null) {
-  $wrapper.removeClass().addClass(cookie_skin);
-}
+// let cookie_skin = $.cookie("wrapper_class");
+// if (cookie_skin !== null) {
+//   $wrapper.removeClass().addClass(cookie_skin);
+// }
